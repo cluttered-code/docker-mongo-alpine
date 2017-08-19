@@ -11,6 +11,7 @@ RUN apk update && \
     rm /usr/bin/mongoperf
 
 COPY entrypoint.sh /entrypoint.sh
+COPY mongod.conf /etc/mongod.conf
 
 VOLUME /data/db
 
