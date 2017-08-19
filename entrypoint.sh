@@ -34,4 +34,4 @@ fi
 
 # Drop root privilege (no way back), exec provided command as user mongodb
 cmd=exec; for i; do cmd="$cmd '$i'"; done
-exec su -s /bin/sh -c "$cmd" mongodb
+exec su -s /bin/sh -c "$cmd -f /etc/mongod.conf" mongodb

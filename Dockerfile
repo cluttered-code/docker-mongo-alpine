@@ -11,6 +11,7 @@ RUN apk update && \
     apk add --no-cache mongodb && \
     echo "net.bindIp: $MONGO_BIND_IP" >> /etc/mongod.conf && \
     echo "security.authorization: enabled" >> /etc/mongod.conf && \
+    echo "storage.directoryPerDB: true" >> /etc/mongod.conf && \
     rm /usr/bin/mongoperf
 
 COPY entrypoint.sh /entrypoint.sh
