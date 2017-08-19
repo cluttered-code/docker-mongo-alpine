@@ -32,9 +32,9 @@ if ! [ -f /data/db/.passwords_set ]; then
     mongod --shutdown
 fi
 
-#cmd="$@"
+cmd="$@"
 
 # Drop root privilege (no way back), exec provided command as user mongodb
-cmd=exec; for i; do cmd="$cmd '$i'"; done
+# cmd=exec; for i; do cmd="$cmd '$i'"; done
 
-exec su -s /bin/sh -c "$cmd -f /etc/mongod.conf" mongodb
+exec su -s /bin/sh -c "$cmd --auth --directoryperdb" mongodb
