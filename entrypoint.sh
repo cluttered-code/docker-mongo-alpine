@@ -11,7 +11,7 @@
 
 if ! [ -f /data/db/.passwords_set ]; then
 
-    eval su -s /bin/sh -c "mongod" mongodb &
+    eval su -s /bin/sh -c "mongod --directoryperdb" mongodb &
 
     RET=1
     while [ $RET -ne 0 ]; do

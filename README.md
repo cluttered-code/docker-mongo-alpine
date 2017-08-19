@@ -39,14 +39,12 @@ docker run -d --name mongo \
     clutteredcode/mongo-alpine
 ```
 ---------------------
-Passing other options to `mongod` at start-up.  If no options are passed, we call
-`mongod --auth`, however if you pass additional options, then you need to include the `--auth`
-option, if desired.
+Passing other options to `mongod` at start-up.
 ```bash
 docker pull clutteredcode/mongo-alpine
 docker run -d --name mongo \
   --env-file "$PWD/.env-file" \
   -p "27017:27017" \
   -v /path/to/data:/data/db \
-  clutteredcode/mongo-alpine mongod --auth --smallfiles
+  clutteredcode/mongo-alpine mongod --smallfiles
 ```
