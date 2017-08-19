@@ -9,8 +9,6 @@ environment variables at run time.
     (defaults to 'root') The root username for the mongod instance.
 * **MONGO_PASSWORD:**  
     (defaults to 'password') The root password for the mongod instance.
-* **MONGO_BIND_IP:**
-    (defaults to '0.0.0.0') The ip to accept connections from. 127.0.0.1 for local lock down.
 
 ## Examples
 **.env-file**
