@@ -7,8 +7,7 @@ ENV MONGO_PASSWORD password
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache mongodb && \
-    rm /usr/bin/mongoperf
+    apk add --no-cache mongodb
 
 COPY entrypoint.sh /entrypoint.sh
 COPY mongod.conf /etc/mongod.conf
